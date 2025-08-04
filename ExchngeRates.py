@@ -1,11 +1,22 @@
 import requests
 import json
-import pprint
+from tkinter import *
+from tkinter import messagebox as mb
 
-key = '6f0ad3963902fb0d54e5e45a'
 
+def exchange():
+    return
 
-result = requests.get('https://open.er-api.com/v6/latest/USD')
-data = json.loads(result.text)
-p = pprint.PrettyPrinter(indent = 4)
-p.pprint(data)
+root = Tk()
+root.title("Курсы обмена валют")
+root.geometry("400x200+400+400")
+
+Label(text="Введите код валюты").pack(padx=10, pady=10)
+
+entry = Entry()
+entry.pack(padx=10, pady=10)
+
+Button(text="Получить курс обмена к доллару", command=exchange).pack(padx=10, pady=10)
+
+root.mainloop()
+
